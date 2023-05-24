@@ -1,5 +1,5 @@
 interface Props {
-  increment: () => void;
+  increment: (value: number) => void;
 }
 
 export const ShowIncrement = ({ increment }: Props) => {
@@ -9,7 +9,7 @@ export const ShowIncrement = ({ increment }: Props) => {
     <button
       className="btn btn-primary"
       onClick={() => {
-        increment();
+        increment(5);
       }}
     >Incrementar</button>
   );
