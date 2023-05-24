@@ -11,6 +11,7 @@ import './index.css'
 // import { FocusScreen } from './04-useRef/FocusScreen'
 // import { Layout } from './05-useLayoutEffect/Layout'
 import { Memorize } from './06-memos/Memorize'
+import { MemoHook } from './06-memos/MemoHook'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     {/* <MultipleCustomHooks /> */}
     {/* <FocusScreen /> */}
     {/* <Layout /> */}
-    <Memorize />
+    {/* <Memorize /> */}
+    <MemoHook />
   </React.StrictMode>,
 )
