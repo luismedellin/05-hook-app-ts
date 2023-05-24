@@ -1,10 +1,8 @@
-import { useState } from "react";
-import { useFetch } from "../hooks/useFetch";
-import { useCounter } from "../hooks/useCounter";
+import { LoadingQuote, Quote } from ".";
+import { useCounter, useFetch } from "../hooks";
 
 export const MultipleCustomHooks = () => {
-
-    const {counter, increment} = useCounter(1);
+  const { counter, increment } = useCounter(1);
 
   const { data, isLoading, hasError } = useFetch(
     `https://breakingbadapi.com/api/quotes/${counter}`
@@ -12,25 +10,18 @@ export const MultipleCustomHooks = () => {
 
   const { author, quote } = !!data && data[0];
 
-
   return (
     <>
       <h1>BreakingBad Quotes</h1>
       <hr />
 
-      {isLoading ? (
-        <div className="alert alert-info text-center">Loading...</div>
-      ) : (
-        <blockquote className="blockquote text-end">
-          <p className="mb-1">{author}</p>
-          <footer className="blockquote-footer">{quote}</footer>
-        </blockquote>
-      )}
+      { isLoading ? <LoadingQuote /> : <Quote author={author} quote={quote} /> }
 
-      <button 
-        className="btn btn-primary" 
+      <button
+        className="btn btn-primary"
         disabled={isLoading}
-        onClick={()=> increment()}>
+        onClick={() => increment()}
+      >
         Next quote
       </button>
     </>
