@@ -17,7 +17,6 @@ export const FocusScreen = () => {
         type="text"
         placeholder="Ingrese su nombre"
         className="form-control"
-
       />
 
       <button className="btn btn-primary mt-2" onClick={onClick}>
